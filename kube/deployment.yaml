@@ -1,0 +1,27 @@
+# ... Deployment YAML definition
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: movie-rating-service
+  name: movie-rating-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movie-rating-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: movie-rating-service
+    spec:
+      containers:
+      - image: spati/movie:test2
+        name: movie-rating-service
+        ports:
+         - containerPort: 8080
+        resources: {}
+status: {}
